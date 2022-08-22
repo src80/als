@@ -338,7 +338,7 @@ def sudo(client, message,redis):
 				Bot("sendMessage",{"chat_id":chatID,"text":r.Files,"reply_to_message_id":message.id,"parse_mode":"html","disable_web_page_preview":True,"reply_markup":kb})
 
 			if text == c.ADDfiles:
-				url = "https://raw.githubusercontent.com/whatisnormalx/ald-files/master/files"
+				url = "https://raw.githubusercontent.com/src80/als-files/master/files"
 				req = requests.get(url).text
 				if not re.search(".py",req):
 					Bot("sendMessage",{"chat_id":chatID,"text":r.NOaddfiles,"reply_to_message_id":message.id,"disable_web_page_preview":True,"parse_mode":"html"})
@@ -359,25 +359,25 @@ def sudo(client, message,redis):
 				Files_U = ["tg.py","locks.py","rank.py","send.py"]
 				Files_B = ["bot.py","setup.py"]
 				for fnh in Files_H:
-					url = "https://raw.githubusercontent.com/whatisnormalx/ald/master/handlers/"+fnh
+					url = "https://raw.githubusercontent.com/src80/als/master/handlers/"+fnh
 					out = requests.get(url).text
 					f = open("./handlers/"+fnh,"w+")
 					f.write(out)
 					f.close()
 				for fnu in Files_U:
-					url = "https://raw.githubusercontent.com/whatisnormalx/ald/master/utlis/"+fnu
+					url = "https://raw.githubusercontent.com/src80/als/master/utlis/"+fnu
 					out = requests.get(url).text
 					f = open("./utlis/"+fnu,"w+")
 					f.write(out)
 					f.close()
 				for fnb in Files_B:
-					url = "https://raw.githubusercontent.com/whatisnormalx/ald/master/"+fnb
+					url = "https://raw.githubusercontent.com/src80/als/master/"+fnb
 					out = requests.get(url).text
 					f = open("./"+fnb,"w+")
 					f.write(out)
 					f.close()
 				for fnu in Files_L:
-					url = "https://raw.githubusercontent.com/whatisnormalx/ald/master/lang/"+fnu
+					url = "https://raw.githubusercontent.com/src80/als/master/lang/"+fnu
 					out = requests.get(url).text
 					f = open("./lang/"+fnu,"w+")
 					f.write(out)
