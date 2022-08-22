@@ -291,10 +291,6 @@ def updateCallback(client, callback_query,redis):
         reply_markup = getOR(rank,r,userID)
         tx = r.AdminO
 
-      if T == "owner":
-        reply_markup = getOR(rank,r,userID)
-        tx = r.OwnerO
-
       if T == "creator":
         reply_markup = getOR(rank,r,userID)
         tx = r.CreatorO
