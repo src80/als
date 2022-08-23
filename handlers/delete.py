@@ -124,9 +124,9 @@ def delete(client, message,redis):
             "can_send_polls": 0,"can_change_info": 0,"can_add_web_page_previews": 0,"can_pin_messages": 0,"can_invite_users": 0,})
 
   if message.sticker:
-    if redis.sismember("{}Nbot:Lsticker".format(BOT_ID),chatID):#8
+    if redis.sismember("{}Nbot:Lsticker".format(BOT_ID),chatXID):#8
       Bot("deleteMessage",{"chat_id":chatID,"message_id":message.id})
-      if redis.sismember("{}Nbot:Lsticker:res".format(BOTID),chatID):
+      if redis.sismember("{}Nbot:Lsticker:res".format(BOT_ID),chatID):
         Bot("restrictChatMember",{"chat_id": chatID,"user_id": userId,"can_send_messages": 0,"can_send_media_messages": 0,"can_send_other_messages": 0,
             "can_send_polls": 0,"can_change_info": 0,"can_add_web_page_previews": 0,"can_pin_messages": 0,"can_invite_users": 0,})
 
