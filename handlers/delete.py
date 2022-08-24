@@ -125,8 +125,7 @@ def delete(client, message,redis):
 
 				
   if message.sticker:
-redis.srem("{}Nbot:{}:{}".format(BOT_ID,chat,Hash),ID):
-        
+    if redis.sismember("{}Nbot:Lssticker".format(BOT_ID),chatID):#8
       Bot("deleteMessage",{"chat_id":chatID,"message_id":message.id})
       if redis.sismember("{}Nbot:Lsticker:res".format(BOT_ID),chatID):
         Bot("restrictChatMember",{"chat_id": chatID,"user_id": userId,"can_send_messages": 0,"can_send_media_messages": 0,"can_send_other_messages": 0,
