@@ -125,7 +125,8 @@ def delete(client, message,redis):
 
 				
   if message.sticker:
-    if rank == "asudo" and redis.get("{}Nbot:bodas".format(BOT_ID),chatID):
+redis.srem("{}Nbot:{}:{}".format(BOT_ID,chat,Hash),ID):
+        
       Bot("deleteMessage",{"chat_id":chatID,"message_id":message.id})
       if redis.sismember("{}Nbot:Lsticker:res".format(BOT_ID),chatID):
         Bot("restrictChatMember",{"chat_id": chatID,"user_id": userId,"can_send_messages": 0,"can_send_media_messages": 0,"can_send_other_messages": 0,
